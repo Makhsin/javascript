@@ -1,4 +1,4 @@
-const qs = "21+5-2*9";
+const qs = "7*4-2+2";
 
 function equation(qs){
    let chars = qs.split('+').toString();
@@ -19,16 +19,16 @@ function equation(qs){
          }
    }
    for(let i=0 ; chars.length != i ; ++i){
-       if (m[i] == "+"){ 
+       if (m[i] == "*"){ 
+        chars[0] = parseInt(chars[0])*parseInt(chars[i+1]);
+        num = chars[0];
+       }
+       else if (m[i] == "+"){
         chars[0] = parseInt(chars[0])+parseInt(chars[i+1]);
         num = chars[0];
        }
        else if (m[i] == "-"){
         chars[0] = parseInt(chars[0])-parseInt(chars[i+1]);
-        num = chars[0];
-       }
-       else if (m[i] == "*"){
-        chars[0] = parseInt(chars[0])*parseInt(chars[i+1]);
         num = chars[0];
        }
    }
